@@ -12,4 +12,5 @@ struct Date {
     var availability: String
     var activities: [String]
     var candidates: [String]
+    var username: String
 }
