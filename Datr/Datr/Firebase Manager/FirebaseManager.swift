@@ -9,6 +9,7 @@
 import FirebaseFirestore
 
 struct FirebaseKeys {
+    // Person keys
     static let firstName = "firstName"
     static let lastName = "lastName"
     static let bio = "bio"
@@ -18,6 +19,13 @@ struct FirebaseKeys {
     static let location = "location"
     static let images = "images"
     static let uuid = "uuid"
+    
+    // Date keys
+    static let availability = "availability"
+    static let activities = "activities"
+    static let candidates = "candidates"
+    
+    // Collection keys
     static let users = "users"
     static let dates = "dates"
 }
@@ -28,11 +36,13 @@ class FirebaseManager {
     static let databaseReference = Firestore.firestore()
     
     
+    // MARK: - Person Methods
+    
     /// Creates a Person dictionary and sends it to the databse.
     ///
     /// - Parameter person: The users information packaged into a first class object called Person.
     ///
-    /// - Parameter completion: Completes with an error if there was a problem with the system. Completes with the Person object if the object was saved successfully to the database. This will be then be saved locally.
+    /// - Parameter completion: Completes with an error if there was a problem with the system. Completes with the Person object if it was saved successfully to the database. The object be then be saved locally.
     static func addPersonToFirebase(_ person: Person, completion: @escaping (Result<Person, Error>) -> Void) {
         let personData: [String : Any] = [
             FirebaseKeys.firstName : person.firstName,
@@ -71,6 +81,33 @@ class FirebaseManager {
                 completion(.success(false))
             } else if snapshot?.documents == nil {
                 completion(.success(true))
+            }
+        }
+    }
+    
+    
+    // MARK: - Date Methods
+    
+    /// Creates a Date dictionary and sends it to the databse.
+    ///
+    /// - Parameter date: The date information packaged into a first class object called Date.
+    ///
+    /// - Parameter completion: Completes with an error for system problems. Completes with the Date object if it was saved successfully to the database. The object will be then be saved locally.
+    static func addDateToFirebase(_ date: Date, completion:  @escaping (Result<Date, Error>) -> Void) {
+        let dateData: [String : Any] = [
+            FirebaseKeys.availability : date.availability,
+            FirebaseKeys.activities : date.activities,
+            FirebaseKeys.candidates : date.candidates,
+            FirebaseKeys.username : date.username
+        ]
+        
+        databaseReference.collection(FirebaseKeys.dates).document(date.username).setData(dateData) { (error) in
+            if let error = error {
+                // present error or something to the user
+                print("error \(error)")
+                completion(.failure(error))
+            } else {
+                completion(.success(date))
             }
         }
     }
