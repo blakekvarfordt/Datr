@@ -17,6 +17,7 @@ struct FirebaseKeys {
     static let age = "age"
     static let location = "location"
     static let images = "images"
+    static let uuid = "uuid"
 }
 
 class FirebaseManager {
@@ -32,7 +33,8 @@ class FirebaseManager {
             FirebaseKeys.gender : person.gender,
             FirebaseKeys.age : person.age,
             FirebaseKeys.location : person.location,
-            FirebaseKeys.images : person.images
+            FirebaseKeys.images : person.images,
+            FirebaseKeys.uuid : person.uuid
         ]
         databaseReference.document(person.username).setData(personData) { (error) in
             if let error = error {

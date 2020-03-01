@@ -18,4 +18,5 @@ struct Person {
     var age: Int
     var location: String
     var images: [String]
+    var uuid: String
 }
