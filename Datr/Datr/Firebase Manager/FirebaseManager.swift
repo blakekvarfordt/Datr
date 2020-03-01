@@ -18,12 +18,16 @@ struct FirebaseKeys {
     static let location = "location"
     static let images = "images"
     static let uuid = "uuid"
+    static let users = "users"
+    static let dates = "dates"
 }
 
 class FirebaseManager {
     
     /// References the Firestore database
-    static let databaseReference = Firestore.firestore().collection("users")
+    static let databaseReference = Firestore.firestore()
+    
+    
     /// Creates a Person dictionary and sends it to the databse.
     ///
     /// - Parameter person: The users information packaged into a first class object called Person.
@@ -41,7 +45,7 @@ class FirebaseManager {
             FirebaseKeys.images : person.images,
             FirebaseKeys.uuid : person.uuid
         ]
-        databaseReference.document(person.username).setData(personData) { (error) in
+        databaseReference.collection(FirebaseKeys.users).document(person.username).setData(personData) { (error) in
             if let error = error {
                 // present error or something to the user
                 print("error \(error)")
@@ -58,7 +62,7 @@ class FirebaseManager {
     ///
     /// - Parameter completion: Completes with an error if there was a problem with the system. Completes true  if a user document does NOT comes back. Completes false if a user document does come back.
     static func checkForUniqueUsername(_ username: String, completion: @escaping (Result<Bool, Error>) -> Void) {
-        databaseReference.whereField(FirebaseKeys.username, isEqualTo: username).getDocuments { (snapshot, error) in
+        databaseReference.collection(FirebaseKeys.users).whereField(FirebaseKeys.username, isEqualTo: username).getDocuments { (snapshot, error) in
             if let error = error {
                 // present error or something to the user
                 print("error \(error)")
