@@ -10,9 +10,13 @@ import Foundation
 import Firebase
 
 struct Person {
-    // Name
+    // Basic Necessary Stuff
     var firstName: String
     var username: String
+    var location: String
+    var isNewUser: Bool = true
+    var connections: [String]
+    var matches: [String]
     
     // Unique identifier that tells the database who this person is.
     var uuid: String
@@ -26,40 +30,39 @@ struct Person {
     var hairLength: Int
     var age: Int
     
-    // One word to describe yourself
+    // Person Info
+    /// One word to describe yourself
     var oneWordDescription: String
     
-    // Things that annoy you.
+    /// Things that annoy you.
     var petPeeves: String
     
-    // Describe a meaningful childhood memory you have. Why this memory?
+    /// Describe a meaningful childhood memory you have. Why this memory?
     var childhoodMemory: String
     
-    // Describe the best peice of advice someone has given you. Why do you like it?
+    /// Describe the best peice of advice someone has given you. Why do you like it?
     var bestAdviceReceived: String
     
-    // Are you a leader or a follower. Why?
+    /// Are you a leader or a follower. Why?
     var leaderOrFollower: String
     
-    // When you have a bad day, what do you do to cheer yourself up?
+    /// When you have a bad day, what do you do to cheer yourself up?
     var badDayRecovery: String
     
-    // What's your dream job. Why this job?
+    /// What's your dream job. Why this job?
     var dreamJob: String
     
-    // What talents do you have?
+    /// What talents do you have?
     var talents: String
     
-    // What's your relationship with your family like?
+    /// What's your relationship with your family like?
     var familyRelationship: String
     
-    // What is the worst thing you did as a kid?
+    /// What is the worst thing you did as a kid?
     var worstThingGrowingUp: String
     
-    // What are you like when you're angry. Describe an experience.
+    /// What are you like when you're angry. Describe an experience.
     var angerDescription: String
     
-    // What area or city do you live in.
-    var location: String
     
 }

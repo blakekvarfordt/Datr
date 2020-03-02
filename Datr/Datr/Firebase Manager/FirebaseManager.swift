@@ -11,6 +11,9 @@ import FirebaseFirestore
 struct FirebaseKeys {
     // Person keys
     static let firstName = "firstName"
+    static let isNewUser = "isNewUser"
+    static let connections = "connections"
+    static let matches = "matches"
     static let gender = "gender"
     static let hairColor = "hairColor"
     static let eyeColor = "eyeColor"
@@ -54,7 +57,10 @@ class FirebaseManager {
     /// - Parameter completion: Completes with an error if there was a problem with the system. Completes with the Person object if it was saved successfully to the database. The object be then be saved locally.
     static func addPersonToFirebase(_ person: Person, completion: @escaping (Result<Person, Error>) -> Void) {
         let personData: [String : Any] = [
+            FirebaseKeys.connections : person.connections,
+            FirebaseKeys.matches : person.matches,
             FirebaseKeys.firstName : person.firstName,
+            FirebaseKeys.isNewUser : person.isNewUser,
             FirebaseKeys.gender : person.gender,
             FirebaseKeys.hairColor : person.hairColor,
             FirebaseKeys.eyeColor : person.eyeColor,
