@@ -12,6 +12,10 @@ import Firebase
 struct Person {
     // Name
     var firstName: String
+    var username: String
+    
+    // Unique identifier that tells the database who this person is.
+    var uuid: String
     
     // Physical Appearance
     var gender: String
@@ -21,9 +25,6 @@ struct Person {
     var height: Int
     var hairLength: Int
     var age: Int
-    
-    // About
-    var username: String
     
     // One word to describe yourself
     var oneWordDescription: String
@@ -58,7 +59,7 @@ struct Person {
     // What are you like when you're angry. Describe an experience.
     var angerDescription: String
     
-    var bio: String
+    // What area or city do you live in.
     var location: String
-    var uuid: String
+    
 }

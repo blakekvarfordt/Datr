@@ -74,7 +74,6 @@ class FirebaseManager {
             FirebaseKeys.familyRelationship : person.familyRelationship,
             FirebaseKeys.worstThingGrowingUp : person.worstThingGrowingUp,
             FirebaseKeys.angerDescription : person.angerDescription,
-            FirebaseKeys.bio : person.bio,
             FirebaseKeys.location : person.location,
             FirebaseKeys.uuid : person.uuid
         ]
