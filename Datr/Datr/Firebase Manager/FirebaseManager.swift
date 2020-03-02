@@ -11,19 +11,28 @@ import FirebaseFirestore
 struct FirebaseKeys {
     // Person keys
     static let firstName = "firstName"
-    static let lastName = "lastName"
-    static let bio = "bio"
-    static let username = "username"
     static let gender = "gender"
+    static let hairColor = "hairColor"
+    static let eyeColor = "eyeColor"
+    static let skinColor = "skinColor"
+    static let height = "height"
+    static let hairLength = "hairLength"
     static let age = "age"
+    static let username = "username"
+    static let oneWordDescription = "oneWordDescription"
+    static let petPeeves = "petPeeves"
+    static let childhoodMemory = "childhoodMemory"
+    static let bestAdviceReceived = "bestAdviceReceived"
+    static let leaderOrFollower = "leaderOrFollower"
+    static let badDayRecovery = "badDayRecovery"
+    static let dreamJob = "dreamJob"
+    static let talents = "talents"
+    static let familyRelationship = "familyRelationship"
+    static let worstThingGrowingUp = "worstThingGrowingUp"
+    static let angerDescription = "angerDescription"
+    static let bio = "bio"
     static let location = "location"
-    static let images = "images"
     static let uuid = "uuid"
-    
-    // Date keys
-    static let availability = "availability"
-    static let activities = "activities"
-    static let candidates = "candidates"
     
     // Collection keys
     static let users = "users"
@@ -46,13 +55,27 @@ class FirebaseManager {
     static func addPersonToFirebase(_ person: Person, completion: @escaping (Result<Person, Error>) -> Void) {
         let personData: [String : Any] = [
             FirebaseKeys.firstName : person.firstName,
-            FirebaseKeys.lastName : person.lastName,
-            FirebaseKeys.bio : person.bio,
-            FirebaseKeys.username : person.username,
             FirebaseKeys.gender : person.gender,
+            FirebaseKeys.hairColor : person.hairColor,
+            FirebaseKeys.eyeColor : person.eyeColor,
+            FirebaseKeys.skinColor : person.skinColor,
+            FirebaseKeys.height : person.height,
+            FirebaseKeys.hairLength : person.hairLength,
             FirebaseKeys.age : person.age,
+            FirebaseKeys.username : person.username,
+            FirebaseKeys.oneWordDescription : person.oneWordDescription,
+            FirebaseKeys.petPeeves : person.petPeeves,
+            FirebaseKeys.childhoodMemory : person.childhoodMemory,
+            FirebaseKeys.bestAdviceReceived : person.bestAdviceReceived,
+            FirebaseKeys.leaderOrFollower : person.leaderOrFollower,
+            FirebaseKeys.badDayRecovery : person.badDayRecovery,
+            FirebaseKeys.dreamJob : person.dreamJob,
+            FirebaseKeys.talents : person.talents,
+            FirebaseKeys.familyRelationship : person.familyRelationship,
+            FirebaseKeys.worstThingGrowingUp : person.worstThingGrowingUp,
+            FirebaseKeys.angerDescription : person.angerDescription,
+            FirebaseKeys.bio : person.bio,
             FirebaseKeys.location : person.location,
-            FirebaseKeys.images : person.images,
             FirebaseKeys.uuid : person.uuid
         ]
         databaseReference.collection(FirebaseKeys.users).document(person.username).setData(personData) { (error) in
@@ -81,33 +104,6 @@ class FirebaseManager {
                 completion(.success(false))
             } else if snapshot?.documents == nil {
                 completion(.success(true))
-            }
-        }
-    }
-    
-    
-    // MARK: - Date Methods
-    
-    /// Creates a Date dictionary and sends it to the databse.
-    ///
-    /// - Parameter date: The date information packaged into a first class object called Date.
-    ///
-    /// - Parameter completion: Completes with an error for system problems. Completes with the Date object if it was saved successfully to the database. The object will be then be saved locally.
-    static func addDateToFirebase(_ date: Date, completion:  @escaping (Result<Date, Error>) -> Void) {
-        let dateData: [String : Any] = [
-            FirebaseKeys.availability : date.availability,
-            FirebaseKeys.activities : date.activities,
-            FirebaseKeys.candidates : date.candidates,
-            FirebaseKeys.username : date.username
-        ]
-        
-        databaseReference.collection(FirebaseKeys.dates).document(date.username).setData(dateData) { (error) in
-            if let error = error {
-                // present error or something to the user
-                print("error \(error)")
-                completion(.failure(error))
-            } else {
-                completion(.success(date))
             }
         }
     }
