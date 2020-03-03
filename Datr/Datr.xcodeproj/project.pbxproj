@@ -10,7 +10,6 @@
 		4614858D13CAEAC9ED787EEA /* Pods_Datr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3D947372B3C6BA7FC22E82 /* Pods_Datr.framework */; };
 		631C88FC2407887D00BB1D30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C88FB2407887D00BB1D30 /* AppDelegate.swift */; };
 		631C88FE2407887D00BB1D30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C88FD2407887D00BB1D30 /* SceneDelegate.swift */; };
-		631C89002407887D00BB1D30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C88FF2407887D00BB1D30 /* ViewController.swift */; };
 		631C89032407887D00BB1D30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631C89012407887D00BB1D30 /* Main.storyboard */; };
 		631C89052407887F00BB1D30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631C89042407887F00BB1D30 /* Assets.xcassets */; };
 		631C89082407887F00BB1D30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631C89062407887F00BB1D30 /* LaunchScreen.storyboard */; };
@@ -20,13 +19,14 @@
 		631C891F2408EC0B00BB1D30 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C891E2408EC0B00BB1D30 /* PersonController.swift */; };
 		63519E2C240DEAB600C8F0C3 /* GenderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63519E2B240DEAB600C8F0C3 /* GenderData.swift */; };
 		63519E2E240DEF7900C8F0C3 /* SexualOrientationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63519E2D240DEF7900C8F0C3 /* SexualOrientationData.swift */; };
+		63519E34240E2D1200C8F0C3 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63519E33240E2D1200C8F0C3 /* PeopleViewController.swift */; };
+		63519E36240E2F5A00C8F0C3 /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63519E35240E2F5A00C8F0C3 /* QuestionData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		631C88F82407887D00BB1D30 /* Datr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Datr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		631C88FB2407887D00BB1D30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		631C88FD2407887D00BB1D30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		631C88FF2407887D00BB1D30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		631C89022407887D00BB1D30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		631C89042407887F00BB1D30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		631C89072407887F00BB1D30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +37,8 @@
 		631C891E2408EC0B00BB1D30 /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
 		63519E2B240DEAB600C8F0C3 /* GenderData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderData.swift; sourceTree = "<group>"; };
 		63519E2D240DEF7900C8F0C3 /* SexualOrientationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexualOrientationData.swift; sourceTree = "<group>"; };
+		63519E33240E2D1200C8F0C3 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		63519E35240E2F5A00C8F0C3 /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
 		AE3D947372B3C6BA7FC22E82 /* Pods_Datr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Datr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8A6AFBEBF3F2C7CAF478D3 /* Pods-Datr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Datr.debug.xcconfig"; path = "Target Support Files/Pods-Datr/Pods-Datr.debug.xcconfig"; sourceTree = "<group>"; };
 		F506B86C8F07BE9D901C4EB0 /* Pods-Datr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Datr.release.xcconfig"; path = "Target Support Files/Pods-Datr/Pods-Datr.release.xcconfig"; sourceTree = "<group>"; };
@@ -80,7 +82,6 @@
 				631C8915240792EA00BB1D30 /* Models */,
 				631C8914240792E400BB1D30 /* Model Controllers */,
 				631C8916240792FD00BB1D30 /* View Controllers */,
-				631C88FF2407887D00BB1D30 /* ViewController.swift */,
 				631C89012407887D00BB1D30 /* Main.storyboard */,
 				631C89092407887F00BB1D30 /* Info.plist */,
 				631C891224078A5800BB1D30 /* GoogleService-Info.plist */,
@@ -119,6 +120,7 @@
 		631C8916240792FD00BB1D30 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				63519E33240E2D1200C8F0C3 /* PeopleViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -136,6 +138,7 @@
 			children = (
 				63519E2B240DEAB600C8F0C3 /* GenderData.swift */,
 				63519E2D240DEF7900C8F0C3 /* SexualOrientationData.swift */,
+				63519E35240E2F5A00C8F0C3 /* QuestionData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -273,10 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63519E36240E2F5A00C8F0C3 /* QuestionData.swift in Sources */,
 				63519E2C240DEAB600C8F0C3 /* GenderData.swift in Sources */,
+				63519E34240E2D1200C8F0C3 /* PeopleViewController.swift in Sources */,
 				631C891D2408D2FF00BB1D30 /* Person.swift in Sources */,
 				631C89192407932E00BB1D30 /* FirebaseManager.swift in Sources */,
-				631C89002407887D00BB1D30 /* ViewController.swift in Sources */,
 				631C88FC2407887D00BB1D30 /* AppDelegate.swift in Sources */,
 				631C891F2408EC0B00BB1D30 /* PersonController.swift in Sources */,
 				63519E2E240DEF7900C8F0C3 /* SexualOrientationData.swift in Sources */,
