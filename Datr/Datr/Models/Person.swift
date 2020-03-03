@@ -17,11 +17,12 @@ struct Person {
     var isNewUser: Bool = true
     var connections: [String]
     var matches: [String]
+    var story: String
     
     // Unique identifier that tells the database who this person is.
     var uuid: String
     
-    // Physical Appearance
+    // Physical Appearance Filters
     var gender: String
     var sexualOrientation: String
     var preferredGender: String
@@ -31,40 +32,5 @@ struct Person {
     var height: Int
     var hairLength: Int
     var age: Int
-    
-    // Person Info
-    /// One word to describe yourself
-    var oneWordDescription: String
-    
-    /// Things that annoy you.
-    var petPeeves: String
-    
-    /// Describe a meaningful childhood memory you have. Why this memory?
-    var childhoodMemory: String
-    
-    /// Describe the best peice of advice someone has given you. Why do you like it?
-    var bestAdviceReceived: String
-    
-    /// Are you a leader or a follower. Why?
-    var leaderOrFollower: String
-    
-    /// When you have a bad day, what do you do to cheer yourself up?
-    var badDayRecovery: String
-    
-    /// What's your dream job. Why this job?
-    var dreamJob: String
-    
-    /// What talents do you have?
-    var talents: String
-    
-    /// What's your relationship with your family like?
-    var familyRelationship: String
-    
-    /// What is the worst thing you did as a kid?
-    var worstThingGrowingUp: String
-    
-    /// What are you like when you're angry. Describe an experience.
-    var angerDescription: String
-    
     
 }

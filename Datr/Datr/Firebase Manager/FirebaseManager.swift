@@ -24,18 +24,7 @@ struct FirebaseKeys {
     static let hairLength = "hairLength"
     static let age = "age"
     static let username = "username"
-    static let oneWordDescription = "oneWordDescription"
-    static let petPeeves = "petPeeves"
-    static let childhoodMemory = "childhoodMemory"
-    static let bestAdviceReceived = "bestAdviceReceived"
-    static let leaderOrFollower = "leaderOrFollower"
-    static let badDayRecovery = "badDayRecovery"
-    static let dreamJob = "dreamJob"
-    static let talents = "talents"
-    static let familyRelationship = "familyRelationship"
-    static let worstThingGrowingUp = "worstThingGrowingUp"
-    static let angerDescription = "angerDescription"
-    static let bio = "bio"
+    static let story = "story"
     static let location = "location"
     static let uuid = "uuid"
     
@@ -73,17 +62,6 @@ class FirebaseManager {
             FirebaseKeys.hairLength : person.hairLength,
             FirebaseKeys.age : person.age,
             FirebaseKeys.username : person.username,
-            FirebaseKeys.oneWordDescription : person.oneWordDescription,
-            FirebaseKeys.petPeeves : person.petPeeves,
-            FirebaseKeys.childhoodMemory : person.childhoodMemory,
-            FirebaseKeys.bestAdviceReceived : person.bestAdviceReceived,
-            FirebaseKeys.leaderOrFollower : person.leaderOrFollower,
-            FirebaseKeys.badDayRecovery : person.badDayRecovery,
-            FirebaseKeys.dreamJob : person.dreamJob,
-            FirebaseKeys.talents : person.talents,
-            FirebaseKeys.familyRelationship : person.familyRelationship,
-            FirebaseKeys.worstThingGrowingUp : person.worstThingGrowingUp,
-            FirebaseKeys.angerDescription : person.angerDescription,
             FirebaseKeys.location : person.location,
             FirebaseKeys.uuid : person.uuid
         ]

@@ -20,21 +20,4 @@ class PeopleViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        
     }
-    
-
-}
-
-extension PeopleViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return QuestionData.questions.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
-        
-        return cell
-    }
-    
-    
 }
