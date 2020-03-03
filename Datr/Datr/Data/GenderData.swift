@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GenderData {
+struct GenderData {
     static let genders: [String] = [
         "Agender",
         "Androgyne",

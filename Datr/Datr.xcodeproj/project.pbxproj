@@ -19,6 +19,7 @@
 		631C891D2408D2FF00BB1D30 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C891C2408D2FF00BB1D30 /* Person.swift */; };
 		631C891F2408EC0B00BB1D30 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C891E2408EC0B00BB1D30 /* PersonController.swift */; };
 		63519E2C240DEAB600C8F0C3 /* GenderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63519E2B240DEAB600C8F0C3 /* GenderData.swift */; };
+		63519E2E240DEF7900C8F0C3 /* SexualOrientationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63519E2D240DEF7900C8F0C3 /* SexualOrientationData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		631C891C2408D2FF00BB1D30 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		631C891E2408EC0B00BB1D30 /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
 		63519E2B240DEAB600C8F0C3 /* GenderData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderData.swift; sourceTree = "<group>"; };
+		63519E2D240DEF7900C8F0C3 /* SexualOrientationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexualOrientationData.swift; sourceTree = "<group>"; };
 		AE3D947372B3C6BA7FC22E82 /* Pods_Datr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Datr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8A6AFBEBF3F2C7CAF478D3 /* Pods-Datr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Datr.debug.xcconfig"; path = "Target Support Files/Pods-Datr/Pods-Datr.debug.xcconfig"; sourceTree = "<group>"; };
 		F506B86C8F07BE9D901C4EB0 /* Pods-Datr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Datr.release.xcconfig"; path = "Target Support Files/Pods-Datr/Pods-Datr.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				63519E2B240DEAB600C8F0C3 /* GenderData.swift */,
+				63519E2D240DEF7900C8F0C3 /* SexualOrientationData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				631C89002407887D00BB1D30 /* ViewController.swift in Sources */,
 				631C88FC2407887D00BB1D30 /* AppDelegate.swift in Sources */,
 				631C891F2408EC0B00BB1D30 /* PersonController.swift in Sources */,
+				63519E2E240DEF7900C8F0C3 /* SexualOrientationData.swift in Sources */,
 				631C88FE2407887D00BB1D30 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
