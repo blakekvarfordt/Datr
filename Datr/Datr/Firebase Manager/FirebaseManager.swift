@@ -15,6 +15,7 @@ struct FirebaseKeys {
     static let connections = "connections"
     static let matches = "matches"
     static let gender = "gender"
+    static let preferredGender = "preferredGender"
     static let sexualOrientation = "sexualOrientation"
     static let hairColor = "hairColor"
     static let eyeColor = "eyeColor"
@@ -63,6 +64,7 @@ class FirebaseManager {
             FirebaseKeys.firstName : person.firstName,
             FirebaseKeys.isNewUser : person.isNewUser,
             FirebaseKeys.gender : person.gender,
+            FirebaseKeys.preferredGender : person.preferredGender,
             FirebaseKeys.sexualOrientation : person.sexualOrientation,
             FirebaseKeys.hairColor : person.hairColor,
             FirebaseKeys.eyeColor : person.eyeColor,

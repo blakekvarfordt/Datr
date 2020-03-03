@@ -24,6 +24,7 @@ struct Person {
     // Physical Appearance
     var gender: String
     var sexualOrientation: String
+    var preferredGender: String
     var hairColor: String
     var eyeColor: String
     var skinColor: String
