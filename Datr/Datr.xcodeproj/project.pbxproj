@@ -20,6 +20,7 @@
 		63519E2C240DEAB600C8F0C3 /* GenderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63519E2B240DEAB600C8F0C3 /* GenderData.swift */; };
 		63519E2E240DEF7900C8F0C3 /* SexualOrientationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63519E2D240DEF7900C8F0C3 /* SexualOrientationData.swift */; };
 		63519E34240E2D1200C8F0C3 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63519E33240E2D1200C8F0C3 /* PeopleViewController.swift */; };
+		63519E3A2410C03900C8F0C3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63519E392410C03900C8F0C3 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		63519E2B240DEAB600C8F0C3 /* GenderData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderData.swift; sourceTree = "<group>"; };
 		63519E2D240DEF7900C8F0C3 /* SexualOrientationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexualOrientationData.swift; sourceTree = "<group>"; };
 		63519E33240E2D1200C8F0C3 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		63519E392410C03900C8F0C3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		AE3D947372B3C6BA7FC22E82 /* Pods_Datr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Datr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8A6AFBEBF3F2C7CAF478D3 /* Pods-Datr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Datr.debug.xcconfig"; path = "Target Support Files/Pods-Datr/Pods-Datr.debug.xcconfig"; sourceTree = "<group>"; };
 		F506B86C8F07BE9D901C4EB0 /* Pods-Datr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Datr.release.xcconfig"; path = "Target Support Files/Pods-Datr/Pods-Datr.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 		631C88FA2407887D00BB1D30 /* Datr */ = {
 			isa = PBXGroup;
 			children = (
+				63519E382410C01400C8F0C3 /* Extensions */,
 				63519E2A240D6BE800C8F0C3 /* Data */,
 				631C89172407930B00BB1D30 /* Firebase Manager */,
 				631C8915240792EA00BB1D30 /* Models */,
@@ -138,6 +141,14 @@
 				63519E2D240DEF7900C8F0C3 /* SexualOrientationData.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		63519E382410C01400C8F0C3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				63519E392410C03900C8F0C3 /* String.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D221A4EDD6924E593CE973D8 /* Pods */ = {
@@ -276,6 +287,7 @@
 				63519E2C240DEAB600C8F0C3 /* GenderData.swift in Sources */,
 				63519E34240E2D1200C8F0C3 /* PeopleViewController.swift in Sources */,
 				631C891D2408D2FF00BB1D30 /* Person.swift in Sources */,
+				63519E3A2410C03900C8F0C3 /* String.swift in Sources */,
 				631C89192407932E00BB1D30 /* FirebaseManager.swift in Sources */,
 				631C88FC2407887D00BB1D30 /* AppDelegate.swift in Sources */,
 				631C891F2408EC0B00BB1D30 /* PersonController.swift in Sources */,

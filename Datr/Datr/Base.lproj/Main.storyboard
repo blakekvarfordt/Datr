@@ -47,36 +47,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uXJ-X8-kOC">
-                                <rect key="frame" x="41.5" y="278" width="331" height="435"/>
-                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <string key="text">THis just in I was at the store when a girl approached me and said that she really liked me and she wanted to go out with me,, but I was like naw girl, I amd a married man. lol Hell yaeh</string>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.79518942640000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blake - Adventurous And Awesome" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZT-VN-xjn">
-                                <rect key="frame" x="41.5" y="193" width="331" height="61"/>
-                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="25"/>
-                                <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPd-s0-UXE">
+                                <rect key="frame" x="41.5" y="197" width="331" height="507.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jhe-bz-LBA">
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="507.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blake - Adventurous And Awesome " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZT-VN-xjn">
+                                                <rect key="frame" x="0.0" y="0.0" width="331" height="61"/>
+                                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="25"/>
+                                                <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uXJ-X8-kOC">
+                                                <rect key="frame" x="0.0" y="61" width="331" height="446.5"/>
+                                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
+                                                <string key="text">THis just in I was at the store when a girl approached me and said that she really liked me and she wanted to go out with me,, but I was like naw girl, I amd a married man. lol Hell yaeh</string>
+                                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yK4-CH-r3E">
+                                        <rect key="frame" x="90.5" y="10" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="1CV-YS-Pbe"/>
+                                            <constraint firstAttribute="height" constant="150" id="GQG-c2-AbZ"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="yK4-CH-r3E" firstAttribute="centerX" secondItem="PPd-s0-UXE" secondAttribute="centerX" id="HCy-a8-tsy"/>
+                                    <constraint firstItem="Jhe-bz-LBA" firstAttribute="centerX" secondItem="PPd-s0-UXE" secondAttribute="centerX" id="NRv-Od-Tb2"/>
+                                    <constraint firstItem="Jhe-bz-LBA" firstAttribute="centerY" secondItem="PPd-s0-UXE" secondAttribute="centerY" id="RkW-Oe-eQi"/>
+                                    <constraint firstItem="Jhe-bz-LBA" firstAttribute="height" secondItem="PPd-s0-UXE" secondAttribute="height" id="VUU-EP-Y9d"/>
+                                    <constraint firstItem="yK4-CH-r3E" firstAttribute="top" secondItem="PPd-s0-UXE" secondAttribute="top" constant="10" id="kZq-31-7fw"/>
+                                    <constraint firstItem="Jhe-bz-LBA" firstAttribute="width" secondItem="PPd-s0-UXE" secondAttribute="width" id="tmT-JN-Pwc"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="qQ4-TC-aeE" appends="YES" id="EBB-3g-083"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="uXJ-X8-kOC" firstAttribute="centerX" secondItem="BPA-2q-9x8" secondAttribute="centerX" id="1t8-bt-XUA"/>
-                            <constraint firstItem="uXJ-X8-kOC" firstAttribute="centerY" secondItem="BPA-2q-9x8" secondAttribute="centerY" multiplier="1.1" id="5Xz-xV-7FW"/>
-                            <constraint firstItem="uXJ-X8-kOC" firstAttribute="width" secondItem="BPA-2q-9x8" secondAttribute="width" multiplier="0.8" id="CTy-yN-hPv"/>
-                            <constraint firstItem="2ZT-VN-xjn" firstAttribute="centerX" secondItem="uXJ-X8-kOC" secondAttribute="centerX" id="LxB-ze-3K8"/>
-                            <constraint firstItem="uXJ-X8-kOC" firstAttribute="top" secondItem="2ZT-VN-xjn" secondAttribute="bottom" constant="24" id="YkQ-gp-n05"/>
-                            <constraint firstItem="uXJ-X8-kOC" firstAttribute="height" secondItem="BPA-2q-9x8" secondAttribute="height" multiplier="0.6" id="m4M-IG-aIk"/>
-                            <constraint firstItem="2ZT-VN-xjn" firstAttribute="width" secondItem="BPA-2q-9x8" secondAttribute="width" multiplier="0.8" id="yMn-SB-Mbm"/>
+                            <constraint firstItem="PPd-s0-UXE" firstAttribute="width" secondItem="BPA-2q-9x8" secondAttribute="width" multiplier="0.8" id="JC4-ZY-7BB"/>
+                            <constraint firstItem="PPd-s0-UXE" firstAttribute="height" secondItem="BPA-2q-9x8" secondAttribute="height" multiplier="0.7" id="a1r-qR-SSq"/>
+                            <constraint firstItem="PPd-s0-UXE" firstAttribute="centerY" secondItem="BPA-2q-9x8" secondAttribute="centerY" id="bSF-CK-u2G"/>
+                            <constraint firstItem="PPd-s0-UXE" firstAttribute="centerX" secondItem="BPA-2q-9x8" secondAttribute="centerX" id="pkh-N7-hs3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BPA-2q-9x8"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZCt-9e-XrV"/>
+                    <connections>
+                        <outlet property="cardTextView" destination="uXJ-X8-kOC" id="GXY-AV-NbA"/>
+                        <outlet property="resultImageView" destination="yK4-CH-r3E" id="bc6-85-8rE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="25G-Dl-h9B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="qQ4-TC-aeE">
+                    <connections>
+                        <action selector="cardAction:" destination="ZbF-SV-QR4" id="XT2-Jm-gKi"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1055.072463768116" y="-827.00892857142856"/>
         </scene>
