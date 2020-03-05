@@ -13,8 +13,11 @@ class PeopleViewController: UIViewController {
     @IBOutlet weak var cardTextView: UITextView!
     @IBOutlet weak var resultImageView: UIImageView!
     
+    var angleDivisor: CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        angleDivisor = (view.frame.width / 2) / 0.5
     }
     
     @IBAction func cardAction(_ sender: UIPanGestureRecognizer) {
@@ -22,6 +25,7 @@ class PeopleViewController: UIViewController {
         let point = sender.translation(in: view)
         let xFromCenter = card.center.x - view.center.x
         card.center = CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
+        card.transform = CGAffineTransform(rotationAngle: xFromCenter / angleDivisor)
         
         if xFromCenter > 0 {
             resultImageView.image = "🔥".image()
@@ -47,9 +51,10 @@ class PeopleViewController: UIViewController {
                 return
             }
             
-            UIView.animate(withDuration: 0.2, animations: {
+            UIView.animate(withDuration: 0.4, animations: {
                 card.center = self.view.center
                 self.resultImageView.alpha = 0
+                card.transform = .identity
             })
         }
     }
