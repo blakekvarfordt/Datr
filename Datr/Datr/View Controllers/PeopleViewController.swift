@@ -34,12 +34,12 @@ class PeopleViewController: UIViewController {
         
         // Set the image on right or left of the center
         if xFromCenter > 0 {
-            resultImageView.image = "🔥".image()
+            resultImageView.image = "😏".image()
         } else {
-            resultImageView.image = "💦".image()
+            resultImageView.image = "😒".image()
         }
         
-        resultImageView.alpha = abs(xFromCenter) / view.center.x
+        resultImageView.alpha = abs(xFromCenter) / (view.center.x * 0.2)
         
         // What to do when the gesture ends
         if sender.state == UIGestureRecognizer.State.ended {
@@ -63,6 +63,7 @@ class PeopleViewController: UIViewController {
             UIView.animate(withDuration: 0.4, animations: {
                 card.center = self.view.center
                 self.resultImageView.alpha = 0
+                self.cardTextView.alpha = 1
                 card.transform = .identity
             })
         }

@@ -71,20 +71,20 @@
                                         </subviews>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yK4-CH-r3E">
-                                        <rect key="frame" x="90.5" y="10" width="150" height="150"/>
+                                        <rect key="frame" x="65.5" y="153.5" width="200" height="200"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="1CV-YS-Pbe"/>
-                                            <constraint firstAttribute="height" constant="150" id="GQG-c2-AbZ"/>
+                                            <constraint firstAttribute="width" constant="200" id="1CV-YS-Pbe"/>
+                                            <constraint firstAttribute="height" constant="200" id="GQG-c2-AbZ"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstItem="yK4-CH-r3E" firstAttribute="centerY" secondItem="PPd-s0-UXE" secondAttribute="centerY" id="BUQ-5E-v5T"/>
                                     <constraint firstItem="yK4-CH-r3E" firstAttribute="centerX" secondItem="PPd-s0-UXE" secondAttribute="centerX" id="HCy-a8-tsy"/>
                                     <constraint firstItem="Jhe-bz-LBA" firstAttribute="centerX" secondItem="PPd-s0-UXE" secondAttribute="centerX" id="NRv-Od-Tb2"/>
                                     <constraint firstItem="Jhe-bz-LBA" firstAttribute="centerY" secondItem="PPd-s0-UXE" secondAttribute="centerY" id="RkW-Oe-eQi"/>
                                     <constraint firstItem="Jhe-bz-LBA" firstAttribute="height" secondItem="PPd-s0-UXE" secondAttribute="height" id="VUU-EP-Y9d"/>
-                                    <constraint firstItem="yK4-CH-r3E" firstAttribute="top" secondItem="PPd-s0-UXE" secondAttribute="top" constant="10" id="kZq-31-7fw"/>
                                     <constraint firstItem="Jhe-bz-LBA" firstAttribute="width" secondItem="PPd-s0-UXE" secondAttribute="width" id="tmT-JN-Pwc"/>
                                 </constraints>
                                 <connections>
