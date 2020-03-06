@@ -13,6 +13,7 @@ class PersonController {
     static let shared = PersonController()
     
     var currentUser: Person?
+    var people = [Person]()
     
     func createPerson(_ person: Person, completion: @escaping (Bool) -> Void) {
         FirebaseManager.addPersonToFirebase(person) { (result) in

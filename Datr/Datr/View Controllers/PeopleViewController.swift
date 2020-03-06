@@ -10,14 +10,28 @@ import UIKit
 
 class PeopleViewController: UIViewController {
 
+    @IBOutlet weak var cardBackgroundView: UIView!
     @IBOutlet weak var cardTextView: UITextView!
     @IBOutlet weak var resultImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     
+    /// Helps set the rotation angle of the card
     var angleDivisor: CGFloat!
+    
+    /// index of the card being displayed to the user.
+    var index: Int = 0
+    
+    /// person object on the card
+    var person: Person? {
+        didSet {
+            index += 1
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         angleDivisor = (view.frame.width / 2) / 0.5
+        setupCard()
     }
     
     @IBAction func cardAction(_ sender: UIPanGestureRecognizer) {
@@ -49,12 +63,14 @@ class PeopleViewController: UIViewController {
                 UIView.animate(withDuration: 0.3, animations: {
                     card.center = CGPoint(x: card.center.x - 200, y: card.center.y + 75)
                     card.alpha = 0
+                    self.setupCard()
                 })
                 return
             } else if card.center.x > (view.frame.width - 75) {
                 UIView.animate(withDuration: 0.3, animations: {
                     card.center = CGPoint(x: card.center.x + 200, y: card.center.y + 75)
                     card.alpha = 0
+                    self.setupCard()
                 })
                 return
             }
@@ -67,6 +83,26 @@ class PeopleViewController: UIViewController {
                 card.transform = .identity
             })
         }
+    }
+    
+    
+    // MARK: - Helper Methods
+    
+    func setupCard() {
+        person = MockPeople.mockPeople[index]
+        
+        if person != nil {
+            cardBackgroundView.center.x = view.center.x
+            cardBackgroundView.center.y = view.center.y
+            cardBackgroundView.alpha = 1
+            cardBackgroundView.transform = .identity
+            
+            resultImageView.alpha = 0
+            
+            nameLabel.text = "\(person?.firstName) - \(person?.age)"
+            cardTextView.text = person?.story
+        }
+        
     }
     
     

@@ -103,7 +103,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZCt-9e-XrV"/>
                     <connections>
+                        <outlet property="cardBackgroundView" destination="PPd-s0-UXE" id="x0m-Xp-FP2"/>
                         <outlet property="cardTextView" destination="uXJ-X8-kOC" id="GXY-AV-NbA"/>
+                        <outlet property="nameLabel" destination="2ZT-VN-xjn" id="cHM-90-TeO"/>
                         <outlet property="resultImageView" destination="yK4-CH-r3E" id="bc6-85-8rE"/>
                     </connections>
                 </viewController>
