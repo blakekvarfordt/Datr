@@ -60,6 +60,7 @@ class PeopleViewController: UIViewController {
             
             // Card disappears on either side if the card's center is within 75 from the edges
             if card.center.x < 75 {
+                // Animates off to the left
                 UIView.animate(withDuration: 0.3, animations: {
                     card.center = CGPoint(x: card.center.x - 200, y: card.center.y + 75)
                     card.alpha = 0
@@ -67,6 +68,7 @@ class PeopleViewController: UIViewController {
                 })
                 return
             } else if card.center.x > (view.frame.width - 75) {
+                // Animates off to the right
                 UIView.animate(withDuration: 0.3, animations: {
                     card.center = CGPoint(x: card.center.x + 200, y: card.center.y + 75)
                     card.alpha = 0
@@ -91,7 +93,7 @@ class PeopleViewController: UIViewController {
     func setupCard() {
         person = MockPeople.mockPeople[index]
         
-        if person != nil {
+        if let person = person {
             cardBackgroundView.center.x = view.center.x
             cardBackgroundView.center.y = view.center.y
             cardBackgroundView.alpha = 1
@@ -99,8 +101,8 @@ class PeopleViewController: UIViewController {
             
             resultImageView.alpha = 0
             
-            nameLabel.text = "\(person?.firstName) - \(person?.age)"
-            cardTextView.text = person?.story
+            nameLabel.text = "\(person.firstName) - \(person.age)"
+            cardTextView.text = person.story
         }
         
     }
