@@ -174,6 +174,9 @@ PODS:
   - Firebase/Firestore (6.18.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 1.11.0)
+  - Firebase/Messaging (6.18.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 4.3.0)
   - FirebaseAnalytics (6.3.0):
     - FirebaseCore (~> 6.6)
     - FirebaseInstallations (~> 1.1)
@@ -183,6 +186,7 @@ PODS:
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (= 0.3.9011)
+  - FirebaseAnalyticsInterop (1.5.0)
   - FirebaseAuthInterop (1.0.0)
   - FirebaseCore (6.6.3):
     - FirebaseCoreDiagnostics (~> 1.2)
@@ -213,6 +217,20 @@ PODS:
     - FirebaseCore (~> 6.6)
     - GoogleUtilities/UserDefaults (~> 6.5)
     - PromisesObjC (~> 1.2)
+  - FirebaseInstanceID (4.3.2):
+    - FirebaseCore (~> 6.6)
+    - FirebaseInstallations (~> 1.0)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GoogleUtilities/UserDefaults (~> 6.5)
+  - FirebaseMessaging (4.3.0):
+    - FirebaseAnalyticsInterop (~> 1.5)
+    - FirebaseCore (~> 6.6)
+    - FirebaseInstanceID (~> 4.3)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.5)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GoogleUtilities/Reachability (~> 6.5)
+    - GoogleUtilities/UserDefaults (~> 6.5)
+    - Protobuf (>= 3.9.2, ~> 3.9)
   - GoogleAppMeasurement (6.3.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -264,10 +282,12 @@ PODS:
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
   - PromisesObjC (1.2.8)
+  - Protobuf (3.11.4)
 
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Firestore
+  - Firebase/Messaging
 
 SPEC REPOS:
   trunk:
@@ -275,12 +295,15 @@ SPEC REPOS:
     - BoringSSL-GRPC
     - Firebase
     - FirebaseAnalytics
+    - FirebaseAnalyticsInterop
     - FirebaseAuthInterop
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseCoreDiagnosticsInterop
     - FirebaseFirestore
     - FirebaseInstallations
+    - FirebaseInstanceID
+    - FirebaseMessaging
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
@@ -290,18 +313,22 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - Protobuf
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   Firebase: 0490eca762a72e4f1582319539153897f1508dee
   FirebaseAnalytics: 058d71e714a1a6804d9e0f25e3bb18e377a51579
+  FirebaseAnalyticsInterop: 3f86269c38ae41f47afeb43ebf32a001f58fcdae
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
   FirebaseCore: 78276943ad85e616dfa54dafa6c89512987d9d60
   FirebaseCoreDiagnostics: 2109d10c35e8289b1ee6cabf44d9ffb055620194
   FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
   FirebaseFirestore: a23d596ae3a8c13d3b8353b565d2adfb690f9032
   FirebaseInstallations: 575cd32f2aec0feeb0e44f5d0110a09e5e60b47b
+  FirebaseInstanceID: 7ee0d6777013bb952f377b41965bf132b6a075be
+  FirebaseMessaging: 4ec33842d36b3319e062e51fb8b35a74f726950d
   GoogleAppMeasurement: 39ecba10918b21c83877d392246157f65db351cf
   GoogleDataTransport: 653963cf5be60fb59cf051e070f0836fdc305f81
   GoogleDataTransportCCTSupport: 84e4d4bbab642f2e9d83ee65d78aca2b5527d314
@@ -311,7 +338,8 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
 
-PODFILE CHECKSUM: 7c863c9d2b64c74e9282ffd02588e1df579d80bd
+PODFILE CHECKSUM: e12899230d3ad2eba51eac31c685a02290ef58ed
 
 COCOAPODS: 1.8.4
