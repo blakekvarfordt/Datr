@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import Messages
 
 struct Person {
     // Basic Necessary Stuff
@@ -26,11 +27,6 @@ struct Person {
     var gender: String
     var sexualOrientation: String
     var preferredGender: String
-    var hairColor: String
-    var eyeColor: String
-    var skinColor: String
-    var height: Int
-    var hairLength: Int
     var age: Int
     
 }

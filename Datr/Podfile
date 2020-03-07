@@ -11,6 +11,7 @@ target 'Datr' do
 pod 'Firebase/Analytics'
 pod 'Firebase/Firestore'
 pod 'Firebase/Messaging'
+pod 'MessageKit'
 
 
 end

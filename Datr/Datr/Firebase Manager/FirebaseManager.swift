@@ -17,11 +17,6 @@ struct FirebaseKeys {
     static let gender = "gender"
     static let preferredGender = "preferredGender"
     static let sexualOrientation = "sexualOrientation"
-    static let hairColor = "hairColor"
-    static let eyeColor = "eyeColor"
-    static let skinColor = "skinColor"
-    static let height = "height"
-    static let hairLength = "hairLength"
     static let age = "age"
     static let username = "username"
     static let story = "story"
@@ -55,11 +50,6 @@ class FirebaseManager {
             FirebaseKeys.gender : person.gender,
             FirebaseKeys.preferredGender : person.preferredGender,
             FirebaseKeys.sexualOrientation : person.sexualOrientation,
-            FirebaseKeys.hairColor : person.hairColor,
-            FirebaseKeys.eyeColor : person.eyeColor,
-            FirebaseKeys.skinColor : person.skinColor,
-            FirebaseKeys.height : person.height,
-            FirebaseKeys.hairLength : person.hairLength,
             FirebaseKeys.age : person.age,
             FirebaseKeys.username : person.username,
             FirebaseKeys.location : person.location,
