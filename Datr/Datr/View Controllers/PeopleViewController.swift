@@ -101,7 +101,7 @@ class PeopleViewController: UIViewController {
             
             resultImageView.alpha = 0
             
-            nameLabel.text = "\(person.firstName) - \(person.age)"
+            nameLabel.text = "\(person.displayName) - \(person.age)"
             cardTextView.text = person.story
         }
         
