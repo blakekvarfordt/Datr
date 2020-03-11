@@ -21,3 +21,33 @@ extension String {
         return image
     }
 }
+
+extension String {
+    /// converts a string to date
+    func toDate() -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        
+        return dateFormatter.date(from: self)!
+    }
+    
+    func getInitals() -> String {
+        let splitStr = self.split(separator: " ")
+        
+        var initals = ""
+        
+        for str in splitStr {
+            guard let char = str.first else {continue}
+            initals.append(char)
+            continue
+        }
+        
+        return removeSpecialCharsFromString(text: initals)
+    }
+    
+    private func removeSpecialCharsFromString(text: String) -> String {
+        let okayChars : Set<Character> =
+            Set("abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890")
+        return String(text.filter {okayChars.contains($0) })
+    }
+}
