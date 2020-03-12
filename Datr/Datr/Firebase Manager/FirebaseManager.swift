@@ -14,6 +14,7 @@ struct FirebaseKeys {
     static let dates = "dates"
     static let matches = "matches"
     static let chats = "chats"
+    static let thread = "thread"
 }
 
 class FirebaseManager {
@@ -90,13 +91,9 @@ class FirebaseManager {
         }
     }
     
-    static func createNewChat(_ currentUser: String, otherUser: String) {
-        let users = [currentUser, otherUser]
-        let data: [String: Any] = [
-            "users":users
-        ]
-        let db = Firestore.firestore().collection("Chats")
-        db.addDocument(data: data) { (error) in
+    static func createNewChat(_ chat: Chat) {
+        let data = chat.dictionary
+        databaseReference.collection(FirebaseKeys.chats).addDocument(data: data) { (error) in
             if let error = error {
                 print("Unable to create chat! \(error)")
                 return
@@ -106,9 +103,9 @@ class FirebaseManager {
         }
     }
     
-    static func saveMessage(_ message: Message, _ chatReference: DocumentReference) {
+    static func createMessage(_ message: Message, _ chatDocReference: DocumentReference) {
         //Writing it to the thread using the saved document reference we saved in load chat function
-        chatReference.collection("thread").addDocument(data: message.dictionary, completion: { (error) in
+        chatDocReference.collection(FirebaseKeys.thread).addDocument(data: message.dictionary, completion: { (error) in
             if let error = error {
                 print("Error Sending message: \(error)")
                 return
