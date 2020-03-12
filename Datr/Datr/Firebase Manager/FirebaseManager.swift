@@ -7,6 +7,7 @@
 //
 
 import FirebaseFirestore
+import FirebaseAuth
 
 struct FirebaseKeys {
     static let users = "users"
@@ -60,57 +61,45 @@ class FirebaseManager {
 //        }
     }
     
-//    func loadChat() {
-//        //Fetch all the chats which has current user in it
-//        let db = Firestore.firestore().collection(FirebaseKeys.chats).whereField(FirebaseKeys.users, arrayContains: Auth.auth().currentUser?.uid ?? "Not Found User 1")
-//
-//        db.getDocuments { (chatQuerySnap, error) in
-//            if let error = error {
-//                print("Error: \(error)")
-//                return
-//            } else {
-//                //Count the no. of documents returned
-//                guard let queryCount = chatQuerySnap?.documents.count else {
-//                    return
-//                }
-//                if queryCount == 0 {
-//                    //If documents count is zero that means there is no chat available and we need to create a new instance
-//                    self.createNewChat()
-//                }
-//                else if queryCount >= 1 {
-//                    //Chat(s) found for currentUser
-//                    for doc in chatQuerySnap!.documents {
-//                        let chat = Chat(dictionary: doc.data())
-//                        //Get the chat which has user2 id
-//                        if (chat?.users.contains(self.user2UID!))! {
-//                            self.docReference = doc.reference
-//                            //fetch it's thread collection
-//                            doc.reference.collection("thread")
-//                                .order(by: "created", descending: false)
-//                                .addSnapshotListener(includeMetadataChanges: true, listener: { (threadQuery, error) in
-//                                    if let error = error {
-//                                        print("Error: \(error)")
-//                                        return
-//                                    } else {
-//                                        self.messages.removeAll()
-//                                        for message in threadQuery!.documents {
-//                                            let msg = Message(dictionary: message.data())
-//                                            self.messages.append(msg!)
-//                                            print("Data: \(msg?.content ?? "No message found")")
-//                                        }
-//                                        self.messagesCollectionView.reloadData()
-//                                        self.messagesCollectionView.scrollToBottom(animated: true)
-//                                    }
-//                                })
-//                            return
-//                        } //end of if
-//                    } //end of for
-//                    self.createNewChat()
-//                } else {
-//                    print("Let's hope this error never prints!")
-//                }
-//            }
-//        }
-//    }
+    static func fetchChats() {
+        //Fetch all the chats which has current user in it
+        databaseReference.collection(FirebaseKeys.chats).whereField(FirebaseKeys.users, arrayContains: Auth.auth().currentUser?.uid ?? "Not Found User 1").getDocuments { (chatQuerySnap, error) in
+            if let error = error {
+                print("Error: \(error)")
+                return
+            } else {
+                //Count the no. of documents returned
+                guard let queryCount = chatQuerySnap?.documents.count else {
+                    return
+                }
+            }
+        }
+    }
+    
+    static func createNewChat(_ currentUser: String, otherUser: String) {
+        let users = [currentUser, otherUser]
+        let data: [String: Any] = [
+            "users":users
+        ]
+        let db = Firestore.firestore().collection("Chats")
+        db.addDocument(data: data) { (error) in
+            if let error = error {
+                print("Unable to create chat! \(error)")
+                return
+            } else {
+                
+            }
+        }
+    }
+    
+    private func saveMessage(_ message: Message, _ chatReference: DocumentReference) {
+        //Writing it to the thread using the saved document reference we saved in load chat function
+        chatReference.collection("thread").addDocument(data: message.dictionary, completion: { (error) in
+            if let error = error {
+                print("Error Sending message: \(error)")
+                return
+            }
+        })
+    }
 }
 
