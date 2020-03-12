@@ -22,6 +22,20 @@ class FirebaseManager {
     static let databaseReference = Firestore.firestore()
     
     
+    static func signIn(completion: @escaping (Result<String, Error>) -> Void) {
+        let auth = Auth.auth()
+        auth.signInAnonymously { (result, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                completion(.failure(error))
+                return
+            } else {
+                guard let userID = result?.user.uid else { return }
+                completion(.success(userID))
+            }
+        }
+    }
+    
     // MARK: - Person Methods
     
     /// Creates a Person dictionary and sends it to the databse.
@@ -92,7 +106,7 @@ class FirebaseManager {
         }
     }
     
-    private func saveMessage(_ message: Message, _ chatReference: DocumentReference) {
+    static func saveMessage(_ message: Message, _ chatReference: DocumentReference) {
         //Writing it to the thread using the saved document reference we saved in load chat function
         chatReference.collection("thread").addDocument(data: message.dictionary, completion: { (error) in
             if let error = error {
